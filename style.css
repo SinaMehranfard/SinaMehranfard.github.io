@@ -1550,3 +1550,237 @@ a {
     font-size: 1.2rem;
   }
 }
+/* WordPress Atom */
+.wordpress-orbit {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wp-orbit {
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(167, 139, 250, 0.65);
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.12);
+}
+
+.wp-orbit-one {
+  transform: rotate(0deg) scaleY(0.38);
+  animation: wp-spin 12s linear infinite;
+}
+
+.wp-orbit-two {
+  transform: rotate(60deg) scaleY(0.48);
+  animation: wp-spin 10s linear infinite reverse;
+  border-color: rgba(96, 165, 250, 0.7);
+}
+
+.wp-orbit-three {
+  transform: rotate(-60deg) scaleY(0.48);
+  animation: wp-spin 14s linear infinite;
+  border-color: rgba(196, 181, 253, 0.7);
+}
+
+.wp-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76px;
+  height: 76px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #17132b;
+  border: 1px solid #a78bfa;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.wp-core span {
+  color: #60a5fa;
+}
+
+.wp-tag {
+  position: absolute;
+  padding: 6px 9px;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  border-radius: 20px;
+  background: #17132b;
+  color: #d8ccff;
+  font-size: 9px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.wp-tag-wordpress {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wp-tag-elementor {
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wp-tag-themes {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes wp-spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* ==========================
+   Mobile Responsive Fixes
+   ========================== */
+
+@media (max-width: 768px) {
+
+  /* گرافیک اصلی بالای سایت */
+  .hero-art {
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+    overflow: hidden;
+  }
+
+  /* اتم وردپرس */
+  .wordpress-orbit {
+    width: 170px;
+    height: 170px;
+  }
+
+  .wp-orbit {
+    inset: 15px;
+  }
+
+  .wp-core {
+    width: 58px;
+    height: 58px;
+    font-size: 23px;
+  }
+
+  .wp-tag {
+    padding: 5px 7px;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .wp-tag-elementor {
+    right: -4px;
+  }
+
+  /* تگ‌های HTML، CSS و JS */
+  .floating-tag {
+    font-size: 11px;
+  }
+
+  /* کارت توسعه وردپرس */
+  .wordpress-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 15px;
+  }
+
+  .wordpress-card h3 {
+    font-size: 20px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .wordpress-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+  }
+
+  .wordpress-card .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .wordpress-card .project-tags span {
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+
+  /* تصویر دو فنجان کافه یلدا */
+  .cafe-visual {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .cafe-art {
+    max-width: 100%;
+    transform-origin: center;
+  }
+
+  .cafe-caption {
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-inline: 10px;
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .hero-art {
+    max-width: 300px;
+  }
+
+  .wordpress-orbit {
+    width: 145px;
+    height: 145px;
+  }
+
+  .wp-orbit {
+    inset: 12px;
+  }
+
+  .wp-core {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .wp-tag {
+    font-size: 7px;
+    padding: 4px 6px;
+  }
+
+  .wp-tag-elementor {
+    right: -5px;
+  }
+
+  .wordpress-card {
+    padding: 16px;
+  }
+}
