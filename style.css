@@ -1293,3 +1293,260 @@ a {
   gap: 20px;
   opacity: 0.8;
 }
+
+/* Cafe Yalda project visual */
+.cafe-visual {
+  background:
+    radial-gradient(ellipse at 50% 48%, #f8e8cf 0%, #ead2ae 48%, #d6b58c 100%);
+  color: #38251f;
+}
+
+.cafe-art {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.cafe-orbit {
+  position: absolute;
+  border: 1px solid #6d49352e;
+  border-radius: 50%;
+}
+
+.cafe-orbit-one {
+  width: 300px;
+  height: 300px;
+  animation: cafe-spin 24s linear infinite;
+}
+
+.cafe-orbit-two {
+  width: 390px;
+  height: 220px;
+  transform: rotate(-35deg);
+  border-style: dashed;
+}
+
+.cafe-cup {
+  position: absolute;
+  width: 112px;
+  height: 145px;
+  display: grid;
+  place-items: center;
+  box-shadow: 12px 20px 30px #533b2b30;
+  transition: transform 0.5s ease;
+}
+
+.cup-cold {
+  background: linear-gradient(110deg, #f5f0df, #ffffff 48%, #d9d2bd);
+  border: 2px solid #ffffffa0;
+  border-radius: 12px 12px 25px 25px;
+  transform: translate(-48px, 8px) rotate(-9deg);
+  clip-path: polygon(5% 0, 95% 0, 80% 100%, 20% 100%);
+}
+
+.cup-lid {
+  position: absolute;
+  top: -5px;
+  left: 3%;
+  width: 94%;
+  height: 13px;
+  background: #8a6247;
+  border-radius: 5px;
+}
+
+.cup-straw {
+  position: absolute;
+  width: 7px;
+  height: 70px;
+  top: -45px;
+  left: 60%;
+  background: #9b4936;
+  transform: rotate(9deg);
+  border-radius: 5px;
+}
+
+.cup-drink {
+  position: absolute;
+  inset: 24px 15px 12px;
+  background: linear-gradient(160deg, #c55b3c, #edb66e 50%, #7c3b2e);
+  border-radius: 8px 8px 18px 18px;
+  opacity: 0.92;
+}
+
+.cup-label {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #ffffffaa;
+  border-radius: 50%;
+  background: #f8efdfd9;
+  color: #623a2b;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.cup-hot {
+  width: 112px;
+  height: 112px;
+  border: 2px solid #fff9eb;
+  border-radius: 8px 8px 32px 32px;
+  background: linear-gradient(110deg, #f8f0df, #ffffff 50%, #d7c7aa);
+  transform: translate(55px, -22px) rotate(9deg);
+}
+
+.hot-coffee {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  right: 8px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #a16b42, #4e2a20);
+}
+
+.hot-handle {
+  position: absolute;
+  right: -29px;
+  top: 25px;
+  width: 30px;
+  height: 42px;
+  border: 8px solid #eee1c9;
+  border-left: 0;
+  border-radius: 0 18px 18px 0;
+}
+
+.cafe-spark {
+  position: absolute;
+  color: #8a4933;
+  font-size: 27px;
+}
+
+.spark-one {
+  top: 27%;
+  left: 27%;
+}
+
+.spark-two {
+  right: 25%;
+  bottom: 29%;
+}
+
+.cafe-caption {
+  position: absolute;
+  bottom: 70px;
+  font: 9px var(--mono);
+  letter-spacing: 0.12em;
+  color: #6e4b3c;
+}
+
+.cafe-visual:hover .cup-cold {
+  transform: translate(-57px, 0) rotate(-4deg) scale(1.05);
+}
+
+.cafe-visual:hover .cup-hot {
+  transform: translate(63px, -29px) rotate(4deg) scale(1.05);
+}
+
+@keyframes cafe-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* WordPress Development Card */
+.wordpress-card {
+  position: relative;
+  margin-top: 15px;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid rgba(155, 120, 255, 0.25);
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    #191827 0%,
+    #12131e 100%
+  );
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Soft purple glow */
+.wordpress-card::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 180px;
+  height: 180px;
+  background: rgba(130, 90, 255, 0.13);
+  filter: blur(65px);
+  pointer-events: none;
+}
+
+/* Hover animation */
+.wordpress-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(155, 120, 255, 0.7);
+  box-shadow: 0 14px 35px rgba(100, 70, 200, 0.15);
+}
+
+/* Card title */
+.wordpress-card h3 {
+  position: relative;
+  margin-bottom: 14px;
+  color: #f2efff;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+/* Description */
+.wordpress-card p {
+  position: relative;
+  color: #b7b5c9;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Technology tags */
+.wordpress-card .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+}
+
+.wordpress-card .project-tags span {
+  padding: 6px 11px;
+  border: 1px solid rgba(155, 120, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(130, 90, 255, 0.08);
+  color: #c9baff;
+  font-size: 0.78rem;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.wordpress-card .project-tags span:hover {
+  background: rgba(130, 90, 255, 0.18);
+  border-color: rgba(155, 120, 255, 0.5);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .wordpress-card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .wordpress-card h3 {
+    font-size: 1.2rem;
+  }
+}
