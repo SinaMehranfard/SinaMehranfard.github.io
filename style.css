@@ -1784,3 +1784,191 @@ a {
     padding: 16px;
   }
 }
+
+.language-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 4px;
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: 999px;
+  background: rgba(20, 18, 35, 0.8);
+  color: #c9c2da;
+  cursor: pointer;
+  isolation: isolate;
+  overflow: hidden;
+  font: inherit;
+  font-size: 12px;
+}
+
+.language-option {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  min-width: 34px;
+  height: 28px;
+  border-radius: 999px;
+  transition: color 0.3s ease;
+}
+
+.language-option.is-active {
+  color: #fff;
+}
+
+.language-indicator {
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  left: 4px;
+  width: 34px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(167, 139, 250, 0.22);
+  border: 1px solid rgba(196, 181, 253, 0.45);
+  box-sizing: border-box;
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.2);
+  transition: transform 0.45s cubic-bezier(.22, 1, .36, 1);
+  pointer-events: none;
+}
+
+.language-indicator::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -45%;
+  width: 35%;
+  background: rgba(255, 255, 255, 0.28);
+  filter: blur(5px);
+  transform: skewX(-20deg);
+  animation: languageShimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes languageShimmer {
+  0%, 100% { left: -45%; }
+  50% { left: 115%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .language-indicator,
+  .language-option {
+    transition: none;
+  }
+
+  .language-indicator::after {
+    animation: none;
+  }
+}
+
+/* Glass effect for all contact buttons */
+.contact-actions > a,
+.contact-actions > button {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Hover effect */
+.contact-actions > a:hover,
+.contact-actions > button:hover {
+  background: rgba(255, 255, 255, 0.19);
+  border-color: rgba(255, 255, 255, 0.42);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  transform: translateY(-3px);
+}
+
+/* Click effect */
+.contact-actions > a:active,
+.contact-actions > button:active {
+  transform: translateY(-1px);
+}
+/* Mobile navigation improvements */
+@media (max-width: 650px) {
+  .navbar {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .nav-contact {
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  .language-switch {
+    flex-shrink: 0;
+  }
+}
+/* Contact buttons on mobile */
+@media (max-width: 480px) {
+  .contact-actions {
+    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .contact-actions > a,
+  .contact-actions > button {
+    width: 100%;
+    min-height: 48px;
+    justify-content: space-between;
+    padding-inline: 18px;
+  }
+}
+/* Small screen typography fixes */
+@media (max-width: 420px) {
+  .hero-title {
+    font-size: clamp(48px, 12vw, 64px);
+    overflow-wrap: anywhere;
+  }
+
+  .contact-title {
+    font-size: clamp(42px, 11vw, 58px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-description p,
+  .about-copy p,
+  .contact-copy {
+    overflow-wrap: anywhere;
+  }
+
+  .section-shell,
+  .navbar {
+    width: calc(100% - 28px);
+  }
+}

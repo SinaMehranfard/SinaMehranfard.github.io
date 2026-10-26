@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +30,14 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
     </nav>
+
+<button class="language-switch" id="languageSwitch"
+        type="button" aria-label="Switch language">
+  <span class="language-indicator" aria-hidden="true"></span>
+  <span class="language-option is-active" data-lang="en">EN</span>
+  <span class="language-option" data-lang="fa">فا</span>
+</button>
+
 
     <a class="nav-contact" href="#contact">
       Let's talk <span>↗</span>
@@ -358,18 +366,34 @@
         and connecting with people who build cool things.
       </p>
 
-     
+
 <div class="contact-actions reveal">
+
+  <!-- Left: Contact Me -->
   <a class="button button-light"
      href="https://mail.google.com/mail/?view=cm&fs=1&to=sinaxmehranfard@gmail.com&su=Portfolio%20Inquiry"
-     target="_blank" rel="noopener noreferrer">
-    Contact Me <span>↗</span>
+     target="_blank"
+     rel="noopener noreferrer">
+    Email Me <span>↗</span>
   </a>
-        <button class="button button-outline" id="copy-name" type="button">
-          Copy my name <span>⧉</span>
-        </button>
-      </div>
-      <p class="copy-feedback" id="copy-feedback" aria-live="polite"></p>
+
+  <!-- Center: Copy My Name -->
+  <button class="button button-outline" id="copy-name" type="button">
+    Copy My Name <span>⧉</span>
+  </button>
+
+  <!-- Right: Call Me -->
+  <button class="button button-outline" id="call-me" type="button">
+    Call Me <span>☎</span>
+  </button>
+
+</div>
+
+<p class="copy-feedback" id="copy-feedback" aria-live="polite"></p>
+
+
+     
+
     </section>
   </main>
 
